@@ -1,0 +1,18 @@
+#cloud-config
+groups:
+    - cloudops
+
+users:
+    - default
+    - name: jit
+      gecos: Jitendra Yadav
+      primary-group: cloudops
+      lock_passwd: false
+      passwd: $1$rBj2fVH.$7m6k2Ep7Cw/mZVjsxJTam.
+      sudo: ['ALL=(ALL) NOPASSWD:ALL']
+      inactive: false
+      shell: /bin/bash
+
+runcmd:
+    - touch /tmp/test.txt
+

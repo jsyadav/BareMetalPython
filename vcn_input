@@ -1,0 +1,185 @@
+{
+"VCN":[
+       {
+        "name": "prod-vcn",
+        "CIDR": "10.0.0.0/16",
+        "compartment_name" :"Cloud-Native-Operations",
+        "IGW":"prod-igw",
+        "dns_label":"prodvcn",
+        "RoutingTables":[
+            {"name":"PublicRoutingTable",
+             "Rules":[
+                 {
+                  "routing_rule" :
+                       {
+                        "CIDR":"0.0.0.0/0",
+                        "gateway":"prod-igw"
+                        }
+                  }
+               ]
+             }
+           ],
+        "SecurityLists" :[
+	     {
+	      "name":"custom-securitylist",
+	      "egressSecurityRules":[
+			{ "destination":"0.0.0.0/0",
+			  "isStateless": "false",
+			  "protocol":"all"
+			}
+	             ],
+	      "ingressSecurityRules":[
+	         {
+            "source":"10.0.0.0/16",
+		    "isStateless": "false",
+		    "protocol":"6",
+		    "tcpOptions":{
+				"destinationPortRange":{
+			        "max":"10250",
+				"min":"10250"}
+			 }
+			},{
+            "source":"10.0.0.0/16",
+		    "isStateless": "false",
+		    "protocol":"6",
+		    "tcpOptions":{
+				"destinationPortRange":{
+			        "max":"6443",
+				"min":"6443"}
+			 }
+			},{
+            "source":"10.0.0.0/16",
+		    "isStateless": "false",
+		    "protocol":"6",
+		    "tcpOptions":{
+				"destinationPortRange":{
+			        "max":"30999",
+				"min":"30000"}
+			 }
+			},{
+            "source":"10.0.0.0/16",
+		    "isStateless": "false",
+		    "protocol":"6",
+		    "tcpOptions":{
+				"destinationPortRange":{
+			        "max":"2380",
+				"min":"2379"}
+			 }
+			},{
+            "source":"10.0.0.0/16",
+		    "isStateless": "false",
+		    "protocol":"6",
+		    "tcpOptions":{
+				"destinationPortRange":{
+			        "max":"111",
+				"min":"111"}
+			 }
+			},{
+            "source":"10.0.0.0/16",
+		    "isStateless": "false",
+		    "protocol":"6",
+		    "tcpOptions":{
+				"destinationPortRange":{
+			        "max":"24007",
+				"min":"24007"}
+			 }
+			},{
+            "source":"10.0.0.0/16",
+		    "isStateless": "false",
+		    "protocol":"6",
+		    "tcpOptions":{
+				"destinationPortRange":{
+			        "max":"49251",
+				"min":"49152"}
+			 }
+			},{
+            "source":"10.0.0.0/16",
+		    "isStateless": "false",
+		    "protocol":"6",
+		    "tcpOptions":{
+				"destinationPortRange":{
+			        "max":"10255",
+				"min":"10255"}
+			 }
+			},{
+            "source":"10.0.0.0/16",
+		    "isStateless": "false",
+		    "protocol":"17",
+		    "udpOptions":{
+				"destinationPortRange":{
+		            "max":"8472",
+			       "min":"8472"}
+		     }
+			}
+			]
+          }
+        ],
+        "Subnets":[
+                   {
+                    "name":"EXT10",
+                    "AD":"KVnC:PHX-AD-1",
+                    "CIDR":"10.0.10.0/24",
+                    "RT":"PublicRoutingTable",
+                    "SL":["DefaultSecurityList","custom-securitylist"],
+                    "dns_label":"ext10"
+                    },
+                   {
+                    "name":"Ext20",
+                    "AD":"KVnC:PHX-AD-1",
+                    "CIDR":"10.0.20.0/24",
+                    "RT":"PublicRoutingTable",
+                    "SL":["DefaultSecurityList","custom-securitylist"],
+                    "dns_label":"ext20"
+                    },
+                   {
+                    "name":"INT1",
+                    "AD":"KVnC:PHX-AD-1",
+                    "CIDR":"10.0.1.0/24",
+                    "RT":"DefaultRouteTable",
+                    "SL":["DefaultSecurityList","custom-securitylist"],
+                    "dns_label":"int1"
+                    },
+                   {
+                    "name":"INT2",
+                    "AD":"KVnC:PHX-AD-2",
+                    "CIDR":"10.0.2.0/24",
+                    "RT":"DefaultRouteTable",
+                    "SL":["DefaultSecurityList","custom-securitylist"],
+                    "dns_label":"int2"
+                    },
+                   {
+                    "name":"INT3",
+                    "AD":"KVnC:PHX-AD-3",
+                    "CIDR":"10.0.3.0/24",
+                    "RT":"DefaultRouteTable",
+                    "SL":["DefaultSecurityList","custom-securitylist"],
+                    "dns_label":"int3"
+                    },
+                   {
+                    "name":"INT11",
+                    "AD":"KVnC:PHX-AD-1",
+                    "CIDR":"10.0.11.0/24",
+                    "RT":"DefaultRouteTable",
+                    "SL":["DefaultSecurityList","custom-securitylist"],
+                    "dns_label":"int11"
+                    },
+                   {
+                    "name":"INT12",
+                    "AD":"KVnC:PHX-AD-2",
+                    "CIDR":"10.0.12.0/24",
+                    "RT":"DefaultRouteTable",
+                    "SL":["DefaultSecurityList","custom-securitylist"],
+                    "dns_label":"int12"
+                    },
+                   {
+                    "name":"INT13",
+                    "AD":"KVnC:PHX-AD-3",
+                    "CIDR":"10.0.13.0/24",
+                    "RT":"DefaultRouteTable",
+                    "SL":["DefaultSecurityList","custom-securitylist"],
+                    "dns_label":"int13"
+                    }
+             ]
+        }
+    ]
+}

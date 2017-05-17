@@ -1,0 +1,40 @@
+#cloud-config
+groups:
+    - cloudops
+
+users:
+    - default
+    - name: sdaas
+      gecos: Software Deliver as a Service
+      primary-group: cloudops
+      #groups: users
+      #selinux-user: <selinux username>
+      #expiredate: <date>
+      #ssh-import-id: <none/id>
+      lock_passwd: true
+      #passwd: password
+      sudo: ['ALL=(ALL) NOPASSWD:ALL']
+      inactive: false
+      system: false
+      shell: /bin/bash
+      ssh-authorized-keys:
+        - ssh-rsa  dummy
+    - name: ost
+      gecos: Operation Stack
+      primary-group: cloudops
+      #groups: users
+      #selinux-user: <selinux username>
+      #expiredate: <date>
+      #ssh-import-id: <none/id>
+      lock_passwd: true
+      #passwd: password
+      sudo: ['ALL=(ALL) NOPASSWD:ALL']
+      inactive: false
+      system: false
+      shell: /bin/bash
+      ssh-authorized-keys:
+        - ssh-rsa  dummy
+
+runcmd:
+    - touch /tmp/test.txt
+
