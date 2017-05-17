@@ -1,12 +1,5 @@
 #!/usr/bin/python
-# -------------------------------------------------------------------------------------------------------------------------------#
-# Copyright (c) 2017 Oracle and/or its affiliates. All rights reserved.								#
-#        NAME            : CreateNetworkLayer.py										#
-#        AUTHOR          : CloudOps, Rahul Viswambharan ( rahul.viswambharan@oracle.com)					#
-#        DESCRIPTION     : BMaaS Network Service automation to create VCNs, Routing Tables, Security Lists  and Subnets		#
-#        EXAMPLE USAGE   : ./CreateNetworkLayer.py -a <action_code> -i <input_file> -c <config_file>				#
-#        NOTES           : CreateNetworkLayer.py expects input file in a valid json format as sample give below			#
-# -------------------------------------------------------------------------------------------------------------------------------#
+
 import oraclebmc
 import sys
 import json
