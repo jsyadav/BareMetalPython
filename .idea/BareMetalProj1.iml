@@ -18,6 +18,9 @@
     <orderEntry type="module" module-name="ApplicationOrchestrator" />
     <orderEntry type="module" module-name="DeploymentManager" />
     <orderEntry type="module" module-name="ConnexionApp" />
+    <orderEntry type="module" module-name="yahoo_finance_data_extract" />
+    <orderEntry type="module" module-name="StockPlot" />
+    <orderEntry type="module" module-name="StockTrade" />
   </component>
   <component name="TestRunnerService">
     <option name="PROJECT_TEST_RUNNER" value="Unittests" />

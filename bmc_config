@@ -1,7 +1,7 @@
 [DEFAULT]
 user=ocid1.user.oc1..aaaaaaaazjxln2gebmla244dgwkum3ngkzdjjxfo3sm5ncnot2h2vqhcbara
 fingerprint=d7:c3:4c:05:09:bc:08:e6:06:da:e1:8a:2a:da:7e:fe
-key_file=~/.oraclebmc/bmcs_priv.pem
+key_file=~/.oraclebmc/bmcs_jit_priv.pem
 tenancy=ocid1.tenancy.oc1..aaaaaaaazqe56p5uw4ri7hzvmblb6jzwiuw6mdt7xgllx4vug3ttbyjtjuxq
 region=us-phoenix-1
 
@@ -23,7 +23,7 @@ subnet_per_ad=1
 [ORACLE_GBU_PROD]
 user=ocid1.user.oc1..aaaaaaaars55suoujqovzci2ikddulj5bjl4ctvhnfi3ibvg5qrjgpfxyfpa
 fingerprint=d7:c3:4c:05:09:bc:08:e6:06:da:e1:8a:2a:da:7e:fe
-key_file=~/.oraclebmc/bmcs_priv.pem
+key_file=~/.oraclebmc/bmcs_jit_priv.pem
 tenancy=ocid1.tenancy.oc1..aaaaaaaa6u6nllkls2lt7bht6rtkn6wr7ya7qaigactc7d5pmubpqdixskbq
 region=us-phoenix-1
 
@@ -59,7 +59,7 @@ region=us-phoenix-1
 [ORACLE_GBU_DEV]
 user=ocid1.user.oc1..aaaaaaaajqtt7b5gkr4aeowh5rfc76b6wxiyfi4ovstvaprqa3bqr5gmqgkq
 fingerprint=d7:c3:4c:05:09:bc:08:e6:06:da:e1:8a:2a:da:7e:fe
-key_file=~/.oraclebmc/bmcs_priv.pem
+key_file=~/.oraclebmc/bmcs_jit_priv.pem
 tenancy=ocid1.tenancy.oc1..aaaaaaaa6gtmn46bketftho3sqcgrlvdfsenqemqy3urkbthlpkos54a6wsa
 region=us-phoenix-1
 network_compartment=ocid1.compartment.oc1..aaaaaaaafclvj5567ippojcctqri7g7zkrq6c3iij3ereqjv3jaosumb27oq

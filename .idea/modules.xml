@@ -11,6 +11,9 @@
       <module fileurl="file://$PROJECT_DIR$/../Installer/.idea/Installer.iml" filepath="$PROJECT_DIR$/../Installer/.idea/Installer.iml" />
       <module fileurl="file://$PROJECT_DIR$/../Installer2/.idea/Installer2.iml" filepath="$PROJECT_DIR$/../Installer2/.idea/Installer2.iml" />
       <module fileurl="file://$PROJECT_DIR$/../Orchestrator/.idea/Orchestrator.iml" filepath="$PROJECT_DIR$/../Orchestrator/.idea/Orchestrator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../StockPlot/.idea/StockPlot.iml" filepath="$PROJECT_DIR$/../StockPlot/.idea/StockPlot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../StockTrade/.idea/StockTrade.iml" filepath="$PROJECT_DIR$/../StockTrade/.idea/StockTrade.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../yahoo_finance_data_extract/.idea/yahoo_finance_data_extract.iml" filepath="$PROJECT_DIR$/../yahoo_finance_data_extract/.idea/yahoo_finance_data_extract.iml" />
     </modules>
   </component>
 </project>

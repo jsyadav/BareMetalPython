@@ -24,15 +24,22 @@ def list_users():
     for user in paginate(identity.list_users,compartment_id=config['tenancy']):
         print(user.name, user.id)
 
+def list_policies():
+    policies = identity.list_policies(compartment_id=config["tenancy"])
+    for p in policies.data:
+        print (p)
+
 
 if __name__ == '__main__' :
-    # config = oraclebmc.config.from_file("bmc_config", "ORACLE_GBU_PROD_OPS_API")
-    config = oraclebmc.config.from_file("bmc_config", "ORACLE_GBU_DEV")
-    compartment_id = config["tenancy"]
+    config = oraclebmc.config.from_file("bmc_config", "ORACLE_GBU_PROD_OPS_API")
+    #config = oraclebmc.config.from_file("bmc_config", "ORACLE_GBU_DEV")
+    # compartment_id = config["tenancy"]
     identity = oraclebmc.identity.IdentityClient(config)
-    user_tmp = identity.list_users(compartment_id).data
-    print(len(user_tmp))
-    for u in user_tmp:
-        print (u.name)
-    list_users()
+    # policies = identity.list_policies(compartment_id=compartment_id)
+    # user_tmp = identity.list_users(compartment_id).data
+    # print(len(user_tmp))
+    # for u in user_tmp:
+    #     print (u.name)
+    # list_users()
+    list_policies()
 

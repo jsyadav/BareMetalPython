@@ -29,7 +29,8 @@ for vnicAttach in vnicAttachements.data:
     if vnicAttach.lifecycle_state == 'ATTACHED' and vnicAttach.subnet_id in all_subnets:
         inst_id = vnicAttach.instance_id
         instance = inst_client.get_instance(instance_id=inst_id)
-        print(inst_id ," name : ", instance.data.display_name)
+        subnet_name = net_client.get_subnet(subnet_id=vnicAttach.subnet_id).data.display_name
+        print('subnet : ', subnet_name ,", name : ", instance.data.display_name)
 
 all_instances_subnets = []
 # iterate over all the VNIC
@@ -49,10 +50,11 @@ print('Total instances subnets '+ (str(len(all_instances_subnets))))
 # Iterate over subnets to find which one is not used
 not_used_cnt=0
 for subnet in all_subnets:
+    subnet_name = net_client.get_subnet(subnet_id=subnet).data.display_name
     if subnet in all_instances_subnets:
-        print ('vnic subnet '+ subnet + ' is in use')
+        print ('vnic subnet '+ subnet_name + ' is in use')
     else:
-        print('vnic subnet ' + subnet +' is NOT in use')
+        print('vnic subnet ' + subnet_name +' is NOT in use')
         not_used_cnt +=1
 
 print (not_used_cnt)

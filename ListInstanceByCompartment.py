@@ -1,6 +1,6 @@
 import oraclebmc
 
-config = oraclebmc.config.from_file("bmc_config","ORACLE_GBU_DEV")
+config = oraclebmc.config.from_file("bmc_config","ORACLE_GBU_PROD")
 iam_client = oraclebmc.identity.IdentityClient(config)
 
 #print (response.data);
